@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Urban Sneakers - Catálogo Deportivo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="/css/formularios.css">
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img alt="Urban Sneakers Logo" src="/images/logo.jpg"/>
+        <h1>Urban Sneakers</h1>
+      </div>
+
+      <nav>
+        <button id="btn-inicio"><i class="fas fa-home"></i> Inicio</button>
+        <button id="btn-cat1"><i class="fas fa-shoe-prints"></i> Deportivas</button>
+        <button id="btn-cat2"><i class="fas fa-tshirt"></i> Casuales</button>
+        <button id="btn-cat3"><i class="fas fa-star"></i> Premium</button>
+        <button id="btn-contacto"><i class="fas fa-envelope"></i> Contacto</button>
+        <button class="oculto" id="btn-login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+        <button class="oculto" id="btn-register"><i class="fas fa-user-plus"></i> Registrarse</button>
+        <button class="oculto" id="btn-logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        <button class="cart-btn oculto" id="btn-cart">
+            <i class="fas fa-shopping-cart"></i> Carrito
+            <span class="cart-count" id="cart-count">0</span>
+        </button>
+       <button id="btn-Productos">
+          <i class="fas fa-tags"></i> Productos
+        </button>
+        <button id="btn-pedidos">
+          <i class="fas fa-tags"></i> Pedidos
+        </button>
+        <button id="btn-clientes">Clientes</button>
+        <button id="btn-reportes">Reportes</button>
+      </nav>
+      <div class="user-status oculto" id="user-info">
+        <i class="fas fa-user-circle"></i>
+        <span id="user-name">Usuario</span>
+      </div>
+    </header>
+<main>
+<section id="form-productos">
+    <h2 class="section-title">Gestión de Productos</h2>
+
+    <div class="form-container">
+        <form id="productoForm" class="formulario">
+
+            <div class="form-group">
+                <label for="id_producto">ID Producto</label>
+                <input type="number" id="id_producto" name="id_producto" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="id_categoria">Categoría</label>
+                <select id="id_categoria" name="id_categoria" required>
+                    <option value="">Seleccione una categoría</option>
+                    <option value="1">Deportivas</option>
+                    <option value="2">Casuales</option>
+                    <option value="3">Premium</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">Nombre del producto</label>
+                <input type="text" id="nombre" name="nombre"
+                    placeholder="Nombre del producto" required>
+            </div>
+
+            <div class="form-group">
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" maxlength="50" required>
+            </div>
+
+            <div class="form-group">
+                <label for="precio">Precio</label>
+                <input type="number" id="precio" name="precio"
+                    step="0.01" min="0" placeholder="0.00" required>
+            </div>
+
+            <div class="form-group">
+                <label for="stock">Unidades disponibles</label>
+                <input type="number" id="stock" min="0" value="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descuento">Descuento (%)</label>
+                <input type="number" id="descuento" min="0" max="90" step="0.01" value="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="imagen">Archivo de imagen</label>
+                <input type="text" id="imagen" maxlength="100" value="imagen1.jpg" required>
+            </div>
+
+            <div class="form-group">
+                <label for="activo">Estado</label>
+                <select id="activo" name="activo">
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+            </div>
+            <div class="form-buttons">
+                <button type="button" id="btnGuardar">Guardar</button>
+                <button type="button" id="btnActualizar">Actualizar</button>
+                <button type="button" id="btnEliminar">Eliminar</button>
+                <button type="reset">Limpiar</button>
+            </div>
+
+        </form>
+    </div>
+</section>
+<section>
+    <h2 class="section-title">Inventario</h2>
+    <p id="mensaje-productos" role="status"></p>
+    <div class="table-responsive">
+        <table>
+            <thead><tr><th>ID</th><th>Producto</th><th>Marca</th><th>Categoría</th><th>Precio</th><th>Stock</th><th>Estado</th><th>Acciones</th></tr></thead>
+            <tbody id="tablaProductos"></tbody>
+        </table>
+    </div>
+</section>
+</main>
+    <footer>
+    <div class="footer-content">
+    <p>© 2025 Urban Sneakers - Todos los derechos reservados</p>
+    <div class="social-links">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+    </div>
+    </footer>
+    <script src="/js/menu_botones.js"></script>
+    <script src="/js/productos.js"></script>
+
+  </body>
+</html>

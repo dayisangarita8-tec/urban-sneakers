@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Urban Sneakers - Catálogo Deportivo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/estilos.css">
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img alt="Urban Sneakers Logo" src="/images/logo.jpg"/>
+        <h1>Urban Sneakers</h1>
+      </div>
+      <nav>
+        <button id="btn-inicio"><i class="fas fa-home"></i> Inicio</button>
+        <button id="btn-cat1"><i class="fas fa-shoe-prints"></i> Deportivas</button>
+        <button id="btn-cat2"><i class="fas fa-tshirt"></i> Casuales</button>
+        <button id="btn-cat3"><i class="fas fa-star"></i> Premium</button>
+        <button id="btn-contacto"><i class="fas fa-envelope"></i> Contacto</button>
+        <button class="oculto" id="btn-login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+        <button class="oculto" id="btn-register"><i class="fas fa-user-plus"></i> Registrarse</button>
+        <button class="oculto" id="btn-logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        <button class="cart-btn oculto" id="btn-cart">
+            <i class="fas fa-shopping-cart"></i> Carrito
+            <span class="cart-count" id="cart-count">0</span>
+        </button>
+        <button id="btn-categorias">
+          <i class="fas fa-tags"></i> Categorías
+        </button>
+        <button id="btn-productos">
+          <i class="fas fa-tags"></i> Productos
+        </button>
+        <button id="btn-pedidos">
+          <i class="fas fa-tags"></i> Pedidos
+        </button>
+        <button id="btn-clientes">Clientes</button>
+        <button id="btn-reportes">Reportes</button>
+      </nav>
+      <div class="user-status oculto" id="user-info">
+        <i class="fas fa-user-circle"></i>
+        <span id="user-name">Usuario</span>
+      </div>
+    </header>
+    <main>
+      <!-- 🔹 Carrusel portada -->
+      <div class="carousel-container">
+        <div class="carousel-slides">
+          <div class="carousel-slide active">
+            <img alt="Nike Air Max" src="/images/imagen4.jpg"/>
+            <div class="slide-caption">Nuevas Nike Air Max - algo que</div>
+          </div>
+          <div class="carousel-slide">
+            <img alt="jordan retro 4" src="/images/imagen33.jpg"/>
+            <div class="slide-caption"> Jordan Retro 4 Red Thunder - no pueda</div>
+          </div>
+            <div class="carousel-slide">
+            <img alt="jordan" src="/images/imagen32.jpg"/>
+            <div class="slide-caption">jordan 4 pink and black - faltar en tu oufit</div>
+            </div>
+        </div>
+        <button class="carousel-control prev">❮</button>
+        <button class="carousel-control next">❯</button>
+        <div class="carousel-indicators"></div>
+      </div>
+      <!-- 🔹 Barra de búsqueda -->
+      <div class="search-container oculto" id="search-container">
+        <div class="search-bar">
+          <input id="search-input" placeholder="Buscar zapatillas..." type="text"/>
+          <button id="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+      <!-- 🔹 Formularios -->
+      <section class="oculto" id="login-form">
+        <h2 class="section-title">Iniciar Sesión</h2>
+        <div class="form-container">
+          <div class="formulario">
+            <div class="form-group">
+              <label for="login-email">email</label>
+              <input id="login-email" placeholder="tu@email.com" type="email"/>
+            </div>
+            <div class="form-group">
+              <label for="login-pass">Contrasena</label>
+              <input id="login-pass" placeholder="Contraseña" type="password"/>
+            </div>
+            <button id="login-btn" type="button">Ingresar</button>
+            <div class="form-footer">
+              ¿No tienes cuenta? <a href="#" id="go-to-register">Regístrate aquí</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="oculto" id="register-form">
+        <h2 class="section-title">Registrarse</h2>
+        <div class="form-container">
+          <div class="formulario" id="formUsuario">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" placeholder="Tu nombre" type="text"/>
+            </div>
+            <div class="form-group">
+              <label for="email">email</label>
+              <input id="email" placeholder="tu@email.com" type="email"/>
+            </div>
+            <div class="form-group">
+              <label for="contrasena">Contrasena</label>
+              <input id="contrasena" placeholder="Crea una contraseña segura" type="password"/>
+            </div>
+            <!-- Selección de rol -->
+            <p class="form-help">Las cuentas nuevas se crean con rol de cliente.</p>
+            <p id="mensaje"></p>
+            <button id="btnRegistrar" type="button">Registrar</button>
+            <div class="form-footer">
+                ¿Ya tienes cuenta? <a href="#" id="go-to-login">Inicia sesión aquí</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 🔹 Catálogo 1 - Zapatillas Deportivas -->
+
+<!-- 🔹 cambio inicio -->
+ <section class="oculto" id="catalogo1">
+      <h2 class="section-title">Zapatillas Deportivas</h2>
+      <div class="productos">
+      <div class="producto">
+      <div class="brand-badge nike">Adidas</div>
+      <img alt="adidas adicolor" src="/images/imagen28.jfif"/>
+      <div class="producto-content">
+      <h3>adidas adicolor </h3>
+      <p>Zapatillas con estilo y combinacion.</p>
+      <div class="price">$180.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="1" data-img="imagen10" data-name="adidas adicolor" data-price="180.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      <div class="producto">
+      <div class="brand-badge nike">nike</div>
+      <img alt="air force one " src="/images/imagen22.jpg"/>
+      <div class="producto-content">
+      <h3>nike black</h3>
+      <p>bonito estilo y  facil combinacion.</p>
+      <div class="price">$150.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="2" data-img="imagen22" data-price="150.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      <div class="producto">
+      <div class="brand-badge LOUIS VUITTON">Louis Vuitton</div>
+      <img alt="LOUIS VUITTON SKATE" src="/images/imagen1.jpg"/>
+      <div class="producto-content">
+      <h3>LOUIS VUITTON SKATE</h3>
+      <p>Edición especial con diseño unico.</p>
+      <div class="price">$180.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="3" data-img="imagen1.jpg" data-name="LOUIS VUITTON SKATE" data-price="180.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      <div class="producto">
+      <div class="brand-badge nike">nike</div>
+      <img alt="nike cortez" src="/images/imagen23.jpg"/>
+      <div class="producto-content">
+      <h3>nike cortez</h3>
+      <p> máxima comodidad.</p>
+      <div class="price">$160.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="4" data-img="imagen23" data-name="nike" data-price="160.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      <div class="producto">
+      <div class="brand-badge TN">TN</div>
+      <img alt="tn negras" src="/images/imagen9.jpg"/>
+      <div class="producto-content">
+      <h3>TN negras</h3>
+      <p>con suela de goma resistente.</p>
+      <div class="price">$180.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="5" data-img="imagen9" data-name="TN" data-price="180.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      <div class="producto">
+      <div class="brand-badge nike">Nike</div>
+      <img alt="Nike SB Dunk Pink" src="/images/imagen24.jpg"/>
+      <div class="producto-content">
+      <h3>nike pink BS</h3>
+      <p>Diseñadas para combinar y ofrecer mayor comodidad.</p>
+      <div class="price">$140.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="6" data-img="imagen9.jpg" data-name="NIKE Air Max Plus Black - Star G" data-price="140.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
+<!-- 🔹 cambio fin -->
+      <section class="oculto" id="catalogo1">
+      <h2 class="section-title">Zapatillas Deportivas</h2>
+      <div class="productos">
+      <div class="producto">
+      <div class="brand-badge jorda">jordan</div>
+      <img alt="jordan chicago" src="/images/imagen29.jpg"/>
+      <div class="producto-content">
+      <h3>jordan chicago</h3>
+      <p>Zapatillas casuales para todo momento.</p>
+      <div class="price">$170.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="1" data-img="imagen29" data-name="jordan chicago" data-price="170.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      <div class="producto">
+      <div class="brand-badge Nike">nike</div>
+      <img alt="nike black " src="/images/imagen22.jpg"/>
+      <div class="producto-content">
+      <h3>nike air force one/h3>
+      <p>bonito estilo y  facil combinacion.</p>
+      <div class="price">$150.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="2" data-img="imagen22" data-price="150.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      <div class="producto">
+      <div class="brand-badge jordan">Jordan</div>
+      <img alt="jordan 6 anillos grises" src="/images/imagen12.jpg"/>
+      <div class="producto-content">
+      <h3>6 anillos</h3>
+      <p>Edición especial para dama y caballero.</p>
+      <div class="price">$170.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="3" data-img="imagen12" data-name=" Jordan 6 anillos " data-price="170.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      <div class="producto">
+      <div class="brand-badge nike">nike</div>
+      <img alt="nike devil negras" src="/images/imagen16.jpg"/>
+      <div class="producto-content">
+      <h3>nike devil</h3>
+      <p>comodidad eficientes y color casual.</p>
+      <div class="price">$130.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="4" data-img="imagen16" data-name="nike devil" data-price="130.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      <div class="producto">
+      <div class="brand-badge nike">Nike</div>
+      <img alt="Air Jordan" src="/images/imagen9.jpg"/>
+      <div class="producto-content">
+      <h3>Air Jordan 4 Retro</h3>
+      <p>Icono atemporal con cuero genuino y suela de goma resistente.</p>
+      <div class="price">$180.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="5" data-img="imagen8.jpg" data-name="Air Jordan 4 Retro" data-price="100.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      <div class="producto">
+      <div class="brand-badge nike">Nike</div>
+      <img alt="Nike SB " src="/images/imagen24.jpg"/>
+      <div class="producto-content">
+      <h3>NIKE ROSADAS</h3>
+      <p>Diseñadas para combinar y ofrecer mayor comodidad.</p>
+      <div class="price">$140.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="6" data-img="imagen24" data-name="NIKE SB pink" data-price="140.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
+
+
+      <!-- 🔹 Catálogo 2 - Zapatillas Casuales -->
+      <section class="oculto" id="catalogo2">
+      <h2 class="section-title">Zapatillas Casuales</h2>
+      <div class="productos">
+      <div class="producto">
+      <div class="brand-badge adidas">Adidas</div>
+      <img alt="Adidas Superstar" src="/images/imagen29.jpg"/>
+      <div class="producto-content">
+      <h3>jordan 1 chicago</h3>
+      <p>Icono del estilo urbano y  detalles clásicos.</p>
+      <div class="price">$190.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="7" data-img="imagen29" data-name="jordan chicago" data-price="190.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      <div class="producto">
+      <div class="brand-badge jordan ">jordan</div>
+      <img alt="jordan cherry" src="/images/imagen21.jpg"/>
+      <div class="producto-content">
+      <h3>jordan melody ehsani cherry</h3>
+      <p>El modelo clásico que nunca pasa de moda, ahora con nuevos colores.</p>
+      <div class="price">$200.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="8" data-img="imagen21" data-name="jordan melody" data-price="200.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      <div class="producto">
+      <div class="brand-badge jordan">jordan 6 </div>
+      <img alt="jordan 6 " src="/images/imagen12.jpg"/>
+      <div class="producto-content">
+      <h3>jordan 6 rings ligth graphite</h3>
+      <p>zapatillas modernas con un estilo unico.</p>
+      <div class="price">$185.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="9" data-img="imagen12" data-name="jordan 6 rings ligth graphite" data-price="185.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
+      <!-- 🔹 Catálogo 3 - Línea Premium -->
+      <section class="oculto" id="catalogo3">
+      <h2 class="section-title">Línea Premium</h2>
+      <div class="productos">
+      <div class="producto">
+      <div class="brand-badge nike">Nike</div>
+      <img alt="Nike devil" src="/images/imagen16.jpg"/>
+      <div class="producto-content">
+      <h3>nike devil</h3>
+      <p>tiene un color casual para toda ocasion.</p>
+      <div class="price">$160.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="10" data-img="imagen16" data-name="nike devil" data-price="160.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      <div class="producto">
+      <div class="brand-badge nike">Nike</div>
+      <img alt="Nike SB" src="/images/imagen27.jpg"/>
+      <div class="producto-content">
+      <h3>Nike sb</h3>
+      <p>diseño ilimitado.</p>
+      <div class="price">$150.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="11" data-img="imagen27" data-name="Nike sb" data-price="150.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      <div class="producto">
+      <div class="brand-badge nike">Nike</div>
+      <img alt="NIKE AIR" src="/images/imagen7.jpg"/>
+      <div class="producto-content">
+      <h3>NIKE AIR FORCE BOTA</h3>
+      <p>Reedición de la clásica Dunk con materiales premium y colores exclusivos.</p>
+      <div class="price">$190.000</div>
+      <div class="producto-actions">
+      <button class="producto-btn btn-favorite"><i class="far fa-heart"></i></button>
+      <button class="producto-btn btn-cart" data-id="12" data-img="imagen7.jpg" data-name="nike air force " data-price="190.000"><i class="fas fa-cart-plus"></i> Añadir</button>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
+      <!-- 🔹 Contacto -->
+      <section class="oculto" id="contacto">
+      <h2 class="section-title">Contacto</h2>
+      <div class="form-container">
+      <div class="formulario">
+      <div class="form-group">
+      <label for="contact-name">Nombre</label>
+      <input id="contact-name" placeholder="Tu nombre" type="text"/>
+      </div>
+      <div class="form-group">
+      <label for="contact-email">Correo electrónico</label>
+      <input id="contact-email" placeholder="tu@email.com" type="email"/>
+      </div>
+      <div class="form-group">
+      <label for="contact-message">Mensaje</label>
+      <textarea id="contact-message" placeholder="Escribe tu mensaje aquí..." rows="5" style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #ddd; font-family: inherit;"></textarea>
+      </div>
+      <button id="contact-btn" type="button">Enviar mensaje</button>
+      </div>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+      <p><i class="fas fa-envelope"></i> Correo: contacto@urbansneakers.com</p>
+      <p><i class="fas fa-phone"></i> Teléfono: 123-456-789</p>
+      <p><i class="fas fa-map-marker-alt"></i> Dirección: Calle Principal 123, Ciudad</p>
+      </div>
+      </section>
+      <section class="oculto" id="carrito">
+      <h2 class="section-title">Tu Carrito de Compras</h2>
+      <!-- Contenedor de items -->
+      <div id="cart-items"></div>
+      <!-- Resumen -->
+      <div class="cart-summary">
+      <div class="summary-row">
+      <span>Subtotal:</span>
+      <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="summary-row">
+      <span>Envío:</span>
+      <span id="cart-shipping">$0.00</span>
+      </div>
+      <div class="summary-row summary-total">
+      <span>Total:</span>
+      <span id="cart-total">$0.00</span>
+      </div>
+      </div>
+      <!-- Acciones -->
+      <div class="cart-actions">
+      <button class="cart-btn btn-continue" id="seguir-comprando">
+      <i class="fas fa-arrow-left"></i> Seguir comprando
+              </button>
+      <button class="cart-btn btn-checkout" id="checkout-btn">
+      <i class="fas fa-credit-card"></i> Finalizar compra
+              </button>
+      </div>
+      </section>
+      <!-- Modal de checkout -->
+      <div class="modal" id="checkout-modal">
+      <div class="modal-content">
+      <div class="modal-header">
+      <h3>Finalizar Compra</h3>
+      <button class="modal-close">×</button>
+      </div>
+      <div class="formulario">
+      <div class="form-group">
+      <label for="checkout-address">Dirección</label>
+      <input id="checkout-address" type="text"/>
+      </div>
+      <button id="confirm-purchase">Confirmar compra</button>
+      </div>
+      </div>
+      </div>
+      <!-- Toast -->
+      <div class="toast" id="toast">
+      <i class="fas fa-check-circle"></i>
+      <span id="toast-message"></span>
+      </div>
+    </main>
+    <footer>
+    <div class="footer-content">
+    <p>© 2025 Urban Sneakers - Todos los derechos reservados</p>
+    <div class="social-links">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+    </div>
+    </footer>
+    <script src="/js/tienda.js"></script>
+    <script src="/js/menu_botones.js"></script>
+  </body>
+</html>

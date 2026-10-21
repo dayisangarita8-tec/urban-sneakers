@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Urban Sneakers - Catálogo Deportivo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="/css/formularios.css">
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img alt="Urban Sneakers Logo" src="/images/logo.jpg"/>
+        <h1>Urban Sneakers</h1>
+      </div>
+
+      <nav>
+        <button id="btn-inicio"><i class="fas fa-home"></i> Inicio</button>
+        <button id="btn-cat1"><i class="fas fa-shoe-prints"></i> Deportivas</button>
+        <button id="btn-cat2"><i class="fas fa-tshirt"></i> Casuales</button>
+        <button id="btn-cat3"><i class="fas fa-star"></i> Premium</button>
+        <button id="btn-contacto"><i class="fas fa-envelope"></i> Contacto</button>
+        <button class="oculto" id="btn-login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+        <button class="oculto" id="btn-register"><i class="fas fa-user-plus"></i> Registrarse</button>
+        <button class="oculto" id="btn-logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        <button class="cart-btn oculto" id="btn-cart">
+            <i class="fas fa-shopping-cart"></i> Carrito
+            <span class="cart-count" id="cart-count">0</span>
+        </button>
+       <button id="btn-categorias">
+          <i class="fas fa-tags"></i> Categorías
+        </button>
+        <button id="btn-pedidos">
+          <i class="fas fa-tags"></i> Pedidos
+        </button>
+      </nav>
+      <div class="user-status oculto" id="user-info">
+        <i class="fas fa-user-circle"></i>
+        <span id="user-name">Usuario</span>
+      </div>
+    </header>
+<main>
+
+    <h2 class="section-title">
+        Gestión de Categorías
+    </h2>
+
+    <div class="form-container">
+
+        <form id="formCategoria" class="formulario">
+
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Nombre de la categoría"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="activo">Estado</label>
+
+                <select id="activo" name="activo" required>
+                    <option value="">Seleccione un estado</option>
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                </select>
+            </div>
+            <button type="submit">
+                <i class="fas fa-save"></i>
+                Guardar Categoría
+            </button>
+
+        </form>
+
+    </div>
+
+</main>
+
+<h2 class="section-title">Listado de Categorías</h2>
+
+<table class="tabla-categorias">
+
+    <thead>
+
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Estado</th>
+            <th>Opciones</th>
+        </tr>
+
+    </thead>
+
+    <tbody id="tablaCategorias">
+
+    </tbody>
+
+</table>
+    <footer>
+    <div class="footer-content">
+    <p>© 2025 Urban Sneakers - Todos los derechos reservados</p>
+    <div class="social-links">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+    </div>
+    </footer>
+    <script src="/js/menu_botones.js"></script>
+    <script src="/js/categorias.js"></script>
+  </body>
+</html>

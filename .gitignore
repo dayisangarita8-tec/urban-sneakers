@@ -1,0 +1,21 @@
+# Python and virtual environments
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+backend/venv/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Local database exports may contain personal data or credentials.
+database/*.sql
+!database/schema.sql
+
+# System and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

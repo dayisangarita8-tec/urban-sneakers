@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pedidos | Urban Sneakers</title>
+  <link rel="stylesheet" href="/css/estilos.css"><link rel="stylesheet" href="/css/formularios.css">
+</head>
+<body>
+  <header><div class="logo-container"><img src="/images/logo.jpg" alt="Urban Sneakers"><h1>Urban Sneakers</h1></div>
+    <nav><button id="btn-inicio">Tienda</button><button id="btn-categorias">Categorías</button><button id="btn-productos">Productos</button><button id="btn-clientes">Clientes</button><button id="btn-pedidos">Pedidos</button><button id="btn-reportes">Reportes</button></nav>
+  </header>
+  <main><h2 class="section-title">Gestión de pedidos</h2><p>Los pedidos se crean desde el carrito de compras. Aquí puedes consultar su estado y actualizarlo como administrador.</p><p id="mensaje-pedidos" role="status"></p>
+    <div class="table-responsive"><table><thead><tr><th>Pedido</th><th>Cliente</th><th>Fecha</th><th>Total</th><th>Dirección</th><th>Estado</th><th>Acción</th></tr></thead><tbody id="tablaPedidos"></tbody></table></div>
+  </main>
+  <script src="/js/menu_botones.js"></script><script src="/js/pedidos.js"></script>
+</body></html>
