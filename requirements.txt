@@ -1,1 +1,6 @@
--r backend/requirements.txt
+fastapi
+uvicorn[standard]
+mysql-connector-python
+pwdlib[argon2]
+python-dotenv
+itsdangerous
