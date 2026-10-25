@@ -34,7 +34,10 @@ function prepararCatalogo() {
     catalogo.id = "catalogo-dinamico";
     catalogo.className = "catalogo-dinamico";
     catalogo.innerHTML = '<h2 class="section-title">Catálogo Urban Sneakers</h2><div id="filtros-categorias" class="filtros-categorias"></div><div id="productos-lista" class="productos"></div><p id="mensaje-catalogo" role="status"></p>';
-    document.querySelector("main")?.append(catalogo);
+    const main = document.querySelector("main");
+    const carrusel = main?.querySelector(".carousel-container");
+    if (carrusel) carrusel.insertAdjacentElement("afterend", catalogo);
+    else main?.append(catalogo);
 
     document.getElementById("btn-cat1")?.addEventListener("click", () => filtrarCategoriaPorNombre("Deportivas"));
     document.getElementById("btn-cat2")?.addEventListener("click", () => filtrarCategoriaPorNombre("Casuales"));
@@ -291,6 +294,11 @@ async function registrarCuenta() {
 }
 
 function prepararContacto() {
+    document.getElementById("btn-contacto")?.addEventListener("click", () => {
+        const contacto = document.getElementById("contacto");
+        contacto?.classList.remove("oculto");
+        contacto?.scrollIntoView({ behavior: "smooth" });
+    });
     document.getElementById("contact-btn")?.addEventListener("click", () => {
         const nombre = document.getElementById("contact-name").value.trim();
         const email = document.getElementById("contact-email").value.trim();
