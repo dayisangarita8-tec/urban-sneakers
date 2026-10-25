@@ -20,6 +20,7 @@ async function apiTienda(url, options = {}) {
 
 document.addEventListener("DOMContentLoaded", async () => {
     document.querySelectorAll("#catalogo1, #catalogo2, #catalogo3").forEach((el) => el.remove());
+    prepararCarrusel();
     prepararCatalogo();
     prepararCarrito();
     prepararCuenta();
@@ -28,6 +29,35 @@ document.addEventListener("DOMContentLoaded", async () => {
     await cargarSesion();
     await cargarCatalogo();
 });
+
+function prepararCarrusel() {
+    const contenedor = document.querySelector(".carousel-slides");
+    const diapositivas = [...document.querySelectorAll(".carousel-slide")];
+    const anterior = document.querySelector(".carousel-control.prev");
+    const siguiente = document.querySelector(".carousel-control.next");
+    const indicadores = document.querySelector(".carousel-indicators");
+    if (!contenedor || diapositivas.length < 2 || !anterior || !siguiente || !indicadores) return;
+
+    let actual = 0;
+    const mostrar = (indice) => {
+        actual = (indice + diapositivas.length) % diapositivas.length;
+        contenedor.style.transform = `translateX(-${actual * 100}%)`;
+        [...indicadores.children].forEach((punto, i) => punto.classList.toggle("active", i === actual));
+    };
+
+    indicadores.replaceChildren();
+    diapositivas.forEach((_, indice) => {
+        const punto = document.createElement("button");
+        punto.type = "button";
+        punto.className = "carousel-indicator";
+        punto.setAttribute("aria-label", `Ver imagen ${indice + 1}`);
+        punto.addEventListener("click", () => mostrar(indice));
+        indicadores.append(punto);
+    });
+    anterior.addEventListener("click", () => mostrar(actual - 1));
+    siguiente.addEventListener("click", () => mostrar(actual + 1));
+    mostrar(0);
+}
 
 function prepararCatalogo() {
     const catalogo = document.createElement("section");
